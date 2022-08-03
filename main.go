@@ -5,7 +5,6 @@ import (
 	"io"
 	"log"
 	"net/http"
-	"os"
 	"time"
 
 	"github.com/go-redis/redis"
@@ -137,17 +136,20 @@ func messageClient(client *websocket.Conn, msg ChatMessage) {
 }
 
 func main() {
+	port := "8000"
+	// port := os.Getenv("PORT")
 
-	port := os.Getenv("PORT")
-
-	redisURL := "redis://:localhost:6379"
+	// redisURL := "redis://:localhost:6379"
+	redisURL := "redis://:172.17.0.2:6379"
 	_, err := redis.ParseURL(redisURL)
 	if err != nil {
 		panic(err)
 	}
 
+	// defines redis connection
 	rdb = redis.NewClient(&redis.Options{
-		Addr:     "redis:6379",
+		Addr: "localhost:6379",
+		// Addr:     "redis:6379",
 		Password: "",
 		DB:       0,
 	})
