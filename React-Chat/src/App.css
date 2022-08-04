@@ -4,10 +4,9 @@
   flex-direction: column;
 }
 
-.chat-body{
-  background: linear-gradient(
-  rgb(255, 255, 255) 0%,
-  rgb(113, 152, 234) 80%);
+.chat-body {
+  background: linear-gradient(rgb(255, 255, 255) 0%,
+      rgb(113, 152, 234) 80%);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -16,12 +15,11 @@
   padding: 10px;
 }
 
-.message-body{
+.message-body {
   width: 50%;
-  background: linear-gradient(
-    45deg,
-    rgb(255, 255, 255) 0%,
-    rgb(230, 235, 247) 80%);
+  background: linear-gradient(45deg,
+      rgb(255, 255, 255) 0%,
+      rgb(230, 235, 247) 80%);
   margin: 3px;
   border-radius: 20px 15px 20px 0;
   height: fit-content;
@@ -30,16 +28,16 @@
   padding: 10px;
   margin: 10px;
   box-shadow: 1px 3px 10px rgba(22, 20, 19, 0.6);
-  word-break:break-word;
+  word-break: break-word;
   text-align: start;
   unicode-bidi: plaintext;
 }
-.my-message-body{
+
+.my-message-body {
   width: 50%;
-  background: linear-gradient(
-    45deg,
-    rgb(255, 255, 255) 0%,
-    rgb(230, 235, 247) 80%);
+  background: linear-gradient(45deg,
+      rgb(255, 255, 255) 0%,
+      rgb(230, 235, 247) 80%);
   margin: 3px;
   border-radius: 20px 15px 20px 0;
   height: fit-content;
@@ -48,11 +46,12 @@
   padding: 10px;
   margin: 10px;
   box-shadow: 1px 3px 10px rgba(22, 20, 19, 0.6);
-  word-break:break-word;
+  word-break: break-word;
   text-align: end;
   unicode-bidi: plaintext;
 }
-.header{
+
+.header {
   /*background: linear-gradient(
     90deg,
     rgb(113, 152, 234) 0%,
@@ -64,64 +63,71 @@
   box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
 
 }
- .profile-pic{
-    margin: auto;
-    width: 80px;
-    height: 80px;
-    background-color: #fff;
-    border-top-left-radius: 60px;
-    border-top-right-radius: 60px;
-    border-bottom-left-radius: 60px;
-    border-bottom-right-radius: 60px;
-    border-bottom: 0;
-    box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
-    background-image: url('./profilepicture.jpg');
-    background-position: center;
-    background-size: contain;
-  }
+
+.profile-pic {
+  margin: auto;
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  border-bottom-left-radius: 60px;
+  border-bottom-right-radius: 60px;
+  border-bottom: 0;
+  box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
+  background-image: url('./profilepicture.jpg');
+  background-position: center;
+  background-size: contain;
+}
 
 .message-box {
   width: 100%;
-  display: 'flex'; flex-direction: 'column-reverse'; height: '100%';position: fixed;bottom: 0;
+  display: 'flex';
+  flex-direction: 'column-reverse';
+  height: '100%';
+  position: fixed;
+  bottom: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: none;
   outline: none;
-  background: linear-gradient(
-    90deg,
-    rgb(113, 152, 234) 0%,
-    rgb(113, 152, 234) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(113, 152, 234) 0%,
+      rgb(113, 152, 234) 100%);
   color: rgb(30, 30, 30);
   text-transform: uppercase;
-  border-radius: 10px,10px,10px,10px;
-  overflow:hidden;
+  border-radius: 10px, 10px, 10px, 10px;
+  overflow: hidden;
   display: flex;
   padding: 20px;
   font-size: 20px;
   justify-content: center;
-  
+
 }
+
 .message-box {
   width: 100%;
-  display: 'flex'; flex-direction: 'column-reverse'; height: '100%';position: fixed;bottom: 0;
+  display: 'flex';
+  flex-direction: 'column-reverse';
+  height: '100%';
+  position: fixed;
+  bottom: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: none;
   outline: none;
-  background: linear-gradient(
-    90deg,
-    rgb(113, 152, 234) 0%,
-    rgb(113, 152, 234) 100%
-  );
+  background: linear-gradient(90deg,
+      rgb(113, 152, 234) 0%,
+      rgb(113, 152, 234) 100%);
   color: rgb(30, 30, 30);
   text-transform: uppercase;
-  border-radius: 10px,10px,10px,10px;
-  overflow:hidden;
+  border-radius: 10px, 10px, 10px, 10px;
+  overflow: hidden;
   display: flex;
   padding: 20px;
   font-size: 20px;
   justify-content: center;
-  
+
 }
+
 .message-input {
   width: 80%;
   border-top-left-radius: 60px;
@@ -132,6 +138,7 @@
 
   border: none;
 }
+
 .message-submit {
   width: 10%;
   border-top-left-radius: 20px;
@@ -142,12 +149,14 @@
   background-color: transparent;
   color: rgb(255, 255, 255);
 }
+
 h1,
 h2 {
-  font-size:30px;
+  font-size: 30px;
   margin: 0;
   padding: 0;
 }
+
 h2 {
   /* color: rgba(255, 255, 255, .8);*/
   font-size: 12px;

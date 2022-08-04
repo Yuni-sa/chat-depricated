@@ -17,10 +17,10 @@ window.addEventListener("DOMContentLoaded", (_) => {
     updateScrollbar();
   });
 
-    var $messages = $('.messages-content'),
+  var $messages = $('.messages-content'),
     d, h, m;
 
-  $(window).load(function() {
+  $(window).load(function () {
     $messages.mCustomScrollbar();
   });
 
@@ -32,7 +32,7 @@ window.addEventListener("DOMContentLoaded", (_) => {
     });
   }
 
-  function setDate(){
+  function setDate() {
     d = new Date()
     if (m != d.getMinutes()) {
       m = d.getMinutes();
@@ -42,7 +42,7 @@ window.addEventListener("DOMContentLoaded", (_) => {
     }
   }
 
-  $('.message-submit').click(function() {
+  $('.message-submit').click(function () {
     console.log($('.message-input').val());
     let text = $('.message-input').val();
     websocket.send(
@@ -54,9 +54,9 @@ window.addEventListener("DOMContentLoaded", (_) => {
     );
   });
 
-  $('.button').click(function(){
+  $('.button').click(function () {
     $('.menu .items span').toggleClass('active');
-     $('.menu .button').toggleClass('active');
+    $('.menu .button').toggleClass('active');
   });
 });
 

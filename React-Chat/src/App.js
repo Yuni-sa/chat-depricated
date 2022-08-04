@@ -6,7 +6,7 @@ import { io } from "socket.io-client";
 import React, { useEffect, useState } from "react";
 import ReactDOM from 'react-dom'
 
-const App =({}) => {
+const App = ({ }) => {
 
   return (
     <div className="App">

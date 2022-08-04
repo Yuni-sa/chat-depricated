@@ -30,9 +30,9 @@ Chat
 --------------------*/
 .chat {
   position: relative;
-    /* top: 50%;
+  /* top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);*/ 
+    transform: translate(-50%, -50%);*/
   width: 100%;
   height: calc(100% - 15px);
   max-height: 1000px;
@@ -65,6 +65,7 @@ Chat Title
   text-transform: uppercase;
   text-align: center;
 }
+
 .chat-title h1,
 .chat-title h2 {
   font-weight: normal;
@@ -72,11 +73,13 @@ Chat Title
   margin: 0;
   padding: 0;
 }
+
 .chat-title h2 {
   /* color: rgba(255, 255, 255, .8);*/
   font-size: 11px;
   letter-spacing: 1px;
 }
+
 .chat-title .avatar {
   position: absolute;
   z-index: 1;
@@ -90,6 +93,7 @@ Chat Title
   padding: 0;
   border: 1px solid #fff;
 }
+
 .chat-title .avatar img {
   width: 100%;
   height: auto;
@@ -106,6 +110,7 @@ Messages
   position: relative;
   width: 100%;
 }
+
 .messages .messages-content {
   position: absolute;
   top: 0;
@@ -113,6 +118,7 @@ Messages
   height: 101%;
   width: 100%;
 }
+
 .messages .message {
   clear: both;
   float: left;
@@ -128,6 +134,7 @@ Messages
   border: 1px solid #ccc;
   /*text-shadow: 0 1px 1px rgba(0, 0, 0, .2);*/
 }
+
 .messages .message .timestamp {
   position: absolute;
   bottom: -15px;
@@ -136,6 +143,7 @@ Messages
   right: 30px;
   /* color: rgba(255, 255, 255, .7);*/
 }
+
 .messages .message .checkmark-sent-delivered {
   position: absolute;
   bottom: -15px;
@@ -143,6 +151,7 @@ Messages
   font-size: 12px;
   color: #999;
 }
+
 .messages .message .checkmark-read {
   color: blue;
   position: absolute;
@@ -150,6 +159,7 @@ Messages
   right: 16px;
   font-size: 12px;
 }
+
 .messages .message::before {
   /*  content: '';
     position: absolute;
@@ -158,6 +168,7 @@ Messages
     left: 0;
     border-right: 7px solid transparent;*/
 }
+
 .messages .message .avatar {
   position: absolute;
   z-index: 1;
@@ -171,10 +182,12 @@ Messages
   padding: 0;
   border: 2px solid rgba(255, 255, 255, 0.5);
 }
+
 .messages .message .avatar img {
   width: 100%;
   height: auto;
 }
+
 .messages .message.message-personal {
   float: right;
   text-align: right;
@@ -183,6 +196,7 @@ Messages
   border: 1px solid #ccc;
   border-radius: 20px 20px 0 20px;
 }
+
 .messages .message.message-personal::before {
   /*
       content:"";
@@ -198,15 +212,18 @@ Messages
 
    bottom: -8px;*/
 }
+
 .messages .message:last-child {
   margin-bottom: 30px;
 }
+
 .messages .message.new {
   transform: scale(0);
   transform-origin: 0 0;
   -webkit-animation: bounce 500ms linear both;
-          animation: bounce 500ms linear both;
+  animation: bounce 500ms linear both;
 }
+
 .messages .message.loading::before {
   position: relative;
   /*  top: 50%;
@@ -222,11 +239,12 @@ Messages
   z-index: 2;
   margin-top: 4px;
   -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
-          animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
   border: none;
   -webkit-animation-delay: 0.15s;
-          animation-delay: 0.15s;
+  animation-delay: 0.15s;
 }
+
 .messages .message.loading span {
   display: block;
   font-size: 0;
@@ -234,6 +252,7 @@ Messages
   height: 10px;
   position: relative;
 }
+
 .messages .message.loading span::before {
   position: relative;
   /*  top: 50%;
@@ -249,9 +268,10 @@ Messages
   z-index: 2;
   margin-top: 4px;
   -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
-          animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
   margin-left: -7px;
 }
+
 .messages .message.loading span::after {
   position: relative;
   /*  top: 50%;
@@ -267,10 +287,10 @@ Messages
   z-index: 2;
   margin-top: 4px;
   -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
-          animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
   margin-left: 7px;
   -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+  animation-delay: 0.3s;
 }
 
 /*--------------------
@@ -292,6 +312,7 @@ Message Box
   height: 14px;
   border: 1px solid #ccc;
 }
+
 .message-box .message-input {
   background: none;
   border: none;
@@ -305,9 +326,11 @@ Message Box
   width: 265px;
   color: #444;
 }
+
 .message-box textarea:focus:-webkit-placeholder {
   color: transparent;
 }
+
 .message-box .message-submit {
   position: absolute;
   z-index: 1;
@@ -326,6 +349,7 @@ Message Box
   transition: background 0.2s ease;
   cursor: pointer;
 }
+
 .message-box .message-submit:hover {
   background: #fff;
   color: #333;
@@ -339,7 +363,7 @@ Custom Srollbar
   opacity: 0;
 }
 
-.mCSB_inside > .mCSB_container {
+.mCSB_inside>.mCSB_container {
   margin-right: 0px;
   padding: 0 10px;
 }
@@ -355,100 +379,130 @@ Bounce
   0% {
     transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   4.7% {
     transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   9.41% {
     transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   14.11% {
     transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   18.72% {
     transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   24.32% {
     transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   29.93% {
     transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   35.54% {
     transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   41.04% {
     transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   52.15% {
     transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   63.26% {
     transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   85.49% {
     transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   100% {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
 }
+
 @keyframes bounce {
   0% {
     transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   4.7% {
     transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   9.41% {
     transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   14.11% {
     transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   18.72% {
     transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   24.32% {
     transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   29.93% {
     transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   35.54% {
     transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   41.04% {
     transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   52.15% {
     transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   63.26% {
     transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   85.49% {
     transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
+
   100% {
     transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
   }
 }
+
 @-webkit-keyframes ball {
   from {
     transform: translateY(0) scaleY(0.8);
   }
+
   to {
     transform: translateY(-10px);
   }
 }
+
 @keyframes ball {
   from {
     transform: translateY(0) scaleY(0.8);
   }
+
   to {
     transform: translateY(-10px);
   }
 }
+
 .avenue-messenger {
   opacity: 1;
   border-radius: 20px;
@@ -552,7 +606,8 @@ Bounce
   border: 1px solid #4A90E2;
 }
 
-.arrow_box:after, .arrow_box:before {
+.arrow_box:after,
+.arrow_box:before {
   left: 100%;
   top: 50%;
   border: solid transparent;
@@ -646,7 +701,8 @@ Bounce
   color: #777;
 }
 
-@media only screen and (max-device-width: 667px), screen and (max-width: 450px) {
+@media only screen and (max-device-width: 667px),
+screen and (max-width: 450px) {
   .avenue-messenger {
     z-index: 2147483001 !important;
     width: 100% !important;
@@ -685,6 +741,7 @@ Bounce
     border-top-right-radius: 0;
   }
 }
+
 @media only screen and (min-device-width: 667px) {
   div.half {
     margin: auto;
