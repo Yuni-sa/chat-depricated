@@ -158,7 +158,10 @@ func main() {
 	pong, err := rdb.Ping().Result()
 	log.Println(pong, err)
 
-	http.Handle("/", http.FileServer(http.Dir("./public")))
+	// creates an echo server
+	// http.Handle("/", http.FileServer(http.Dir("./public")))
+
+	// handles connection through /websocket
 	http.HandleFunc("/websocket", handleConnections)
 	go handleMessages()
 
