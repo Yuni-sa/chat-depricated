@@ -1,7 +1,7 @@
 package main
 
 import (
-	"encoding/json"
+	// "encoding/json"
 	"log"
 
 	"github.com/go-redis/redis"
@@ -9,34 +9,47 @@ import (
 
 var rdb *redis.Client
 
-func connectDB() {
+func connectDB() *redis.Client {
 	// defines redis connection
-	var rdb = redis.NewClient(&redis.Options{
+	rdb = redis.NewClient(&redis.Options{
 		Addr: "localhost:6379",
 		// Addr:     "redis:6379",
 		Password: "",
-		DB:       1,
+		DB:       0,
 	})
 
 	// simple ping / connection check
 	pong, err := rdb.Ping().Result()
 	log.Println(pong, err)
+	return rdb
 }
-s
+
 func sendToRedis(user User) {
-	// parses the JSON-encoded data into json var
-	json, err := json.Marshal(user)
-	if err != nil {
-		panic(err)
-	}
+	var m = make(map[string]interface{})
+	m["username"] = user.Username
+	m["password"] = user.Password
+	rdb.HMSet(user.Id, m)
 
-	// pushes the message to redis
-	if err := rdb.RPush("chat_messages", json).Err(); err != nil {
-		panic(err)
-	}
 }
 
-func getFromRedis(user User) {
-	val, _ := rdb.Get(ctx, "key").Result()
-	return val
-}
+// func getFromRedis(data map[string]string, c *fiber.Ctx) error {
+// 	var user User
+//
+// 	user.Username = data["username"]
+// 	user.Password = rdb.HGet(data["username"], "password").Val()
+//
+// 	if user.Password == "" {
+// 		c.Status(fiber.StatusNotFound)
+// 		return c.JSON(fiber.Map{
+// 			"message": "user not found",
+// 		})
+// 	}
+//
+// 	if err := bcrypt.CompareHashAndPassword([]byte(user.Password), []byte(data["password"])); err != nil {
+// 		c.Status(fiber.StatusBadRequest)
+// 		return c.JSON(fiber.Map{
+// 			"message": "incorrect password",
+// 		})
+// 	}
+// 	return (c.JSON(user))
+// }
