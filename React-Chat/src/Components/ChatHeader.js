@@ -7,8 +7,8 @@ function ChatHeader() {
       <div className="profile-pic"> </div>
 
       <div className="chat-title">
-        <h1 className="user-name">Yuni Sus</h1>
-        <h2 className="id">שכחתי את המספר האישי שלך</h2>
+        <h1 className="user-name">Yonatan Sasson</h1>
+        <h2 className="id">9149934</h2>
       </div>
 
     </div>
