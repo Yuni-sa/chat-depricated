@@ -8,7 +8,7 @@ services:
     depends_on:
       - backend
   chat-backend:
-    build: .
+    build: Go-Chat/.
     container_name: backend
     ports:
       - 8000:8000

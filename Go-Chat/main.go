@@ -13,6 +13,7 @@ import (
 
 // the chat message structre
 type ChatMessage struct {
+	Room     string `json:"room"`
 	Username string `json:"username"`
 	Text     string `json:"text"`
 	Time     string `json:"time"`
