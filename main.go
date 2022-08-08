@@ -140,11 +140,11 @@ func main() {
 	// port := os.Getenv("PORT")
 
 	// redisURL := "redis://:localhost:6379"
-	redisURL := "redis://:172.17.0.2:6379"
-	_, err := redis.ParseURL(redisURL)
-	if err != nil {
-		panic(err)
-	}
+	// redisURL := "redis://:172.17.0.2:6379"
+	// _, err := redis.ParseURL(redisURL)
+	// if err != nil {
+	// 	panic(err)
+	// }
 
 	// defines redis connection
 	rdb = redis.NewClient(&redis.Options{
