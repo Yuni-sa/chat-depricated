@@ -12,7 +12,6 @@ WORKDIR /app
 
 ENV PORT="8000"
 
-COPY --from=builder /build/public /app/public
 COPY --from=builder /build/Chat /app/Chat
 
 CMD ["./Chat"]

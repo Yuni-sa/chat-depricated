@@ -1,12 +1,17 @@
 version: "3.9"
 services:
-  go_js:
-    build: .
-    container_name: chat
+  chat-frontend:
+    build: React-Chat/.
+    container_name: frontend
     ports:
-      - "8000:8000"
-    links:
-      - redis
+      - 3000:3000
+    depends_on:
+      - backend
+  chat-backend:
+    build: .
+    container_name: backend
+    ports:
+      - 8000:8000
     depends_on:
       - redis
   redis:
