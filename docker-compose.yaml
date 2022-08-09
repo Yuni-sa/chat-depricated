@@ -6,7 +6,7 @@ services:
     ports:
       - 3000:3000
     depends_on:
-      - backend
+      - chat-backend
   chat-backend:
     build: Go-Chat/.
     container_name: backend
@@ -14,8 +14,15 @@ services:
       - 8000:8000
     depends_on:
       - redis
+  auth:
+    build: Auth/.
+    container_name: auth
+    ports:
+      - 4000:4000
+    depends_on:
+      - redis
   redis:
-    image: redislabs/redismod
+    image: redis
     container_name: redis
     ports:
       - 6379:6379
