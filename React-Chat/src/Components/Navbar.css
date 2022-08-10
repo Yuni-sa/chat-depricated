@@ -1,0 +1,78 @@
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
+}
+
+.navbar {
+  margin: 10px;
+  position: fixed;
+  top: 0;
+}
+
+.menu {
+  box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
+  border-radius: 20px 20px 20px 20px;
+  /*background-color: lightblue;
+    width: 100%;*/
+  background-color: white;
+
+}
+
+.menu-bars {
+  padding: 10px;
+}
+
+.nav-menu {
+  /*visibility: hidden;*/
+  width: 0px;
+  left: -100%;
+  transition: 350ms;
+}
+
+.nav-menu a {
+  visibility: hidden;
+
+}
+
+.nav-menu-active {
+  width: max-content;
+  height: 80%;
+  /*visibility: visible;*/
+  left: 0;
+  transition: 1000ms;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  background-color: white;
+  box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
+  border-radius: 10px 10px 10px 10px;
+  margin: 5px;
+  width: min-content;
+}
+
+.nav-menu-items {
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+}
+
+.nav-menu-items a {
+  text-decoration: none;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 8px 16px 8px 16px;
+  font-size: 18px;
+
+}
+
+.nav-menu-items a:hover {
+  background-color: lightskyblue;
+}

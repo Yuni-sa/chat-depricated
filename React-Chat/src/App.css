@@ -2,17 +2,39 @@
   text-align: center;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  background-color: rgb(255, 255, 255);
+  /*background: linear-gradient(
+      90deg,
+      rgb(113, 152, 234) 0%,
+      rgb(115, 78, 247) 100%
+    );
+    border-color:#734ef7;*/
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  padding: 10px;
+  box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
 }
 
 .chat-body {
   background: linear-gradient(rgb(255, 255, 255) 0%,
       rgb(113, 152, 234) 80%);
-  min-height: 100vh;
+  width: 100%;
+  /*min-height: 100vh;*/
   display: flex;
   flex-direction: column;
   justify-content: start;
   text-align: center;
   padding: 10px;
+  height: 85vh;
+  overflow-y: scroll;
 }
 
 .message-body {
@@ -20,7 +42,6 @@
   background: linear-gradient(45deg,
       rgb(255, 255, 255) 0%,
       rgb(230, 235, 247) 80%);
-  margin: 3px;
   border-radius: 20px 15px 20px 0;
   height: fit-content;
   width: fit-content;
@@ -31,6 +52,27 @@
   word-break: break-word;
   text-align: start;
   unicode-bidi: plaintext;
+  display: flex;
+  flex-direction: column;
+}
+
+.msg-time {
+  font-size: 10px;
+  align-self: end;
+  color: rgb(113, 152, 234);
+  font-weight: bold;
+}
+
+.msg-txt {
+  font-size: 20px;
+}
+
+.msg-username {
+  align-self: end;
+  font-size: 15px;
+  color: rgb(113, 152, 234);
+  font-weight: bold;
+  width: 100%;
 }
 
 .my-message-body {
@@ -38,8 +80,7 @@
   background: linear-gradient(45deg,
       rgb(255, 255, 255) 0%,
       rgb(230, 235, 247) 80%);
-  margin: 3px;
-  border-radius: 20px 15px 20px 0;
+  border-radius: 15px 20px 0px 20px;
   height: fit-content;
   width: fit-content;
   max-width: 50%;
@@ -47,21 +88,10 @@
   margin: 10px;
   box-shadow: 1px 3px 10px rgba(22, 20, 19, 0.6);
   word-break: break-word;
-  text-align: end;
+  text-align: start;
   unicode-bidi: plaintext;
-}
-
-.header {
-  /*background: linear-gradient(
-    90deg,
-    rgb(113, 152, 234) 0%,
-    rgb(115, 78, 247) 100%
-  );
-  border-color:#734ef7;*/
-  display: flex;
-  flex-direction: column;
-  box-shadow: 1px 4px 20px rgba(22, 20, 19, 0.6);
-
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .profile-pic {
@@ -84,9 +114,7 @@
   width: 100%;
   display: 'flex';
   flex-direction: 'column-reverse';
-  height: '100%';
-  position: fixed;
-  bottom: 0;
+  height: 7vh;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: none;
   outline: none;
@@ -96,36 +124,10 @@
   color: rgb(30, 30, 30);
   text-transform: uppercase;
   border-radius: 10px, 10px, 10px, 10px;
-  overflow: hidden;
   display: flex;
   padding: 20px;
   font-size: 20px;
   justify-content: center;
-
-}
-
-.message-box {
-  width: 100%;
-  display: 'flex';
-  flex-direction: 'column-reverse';
-  height: '100%';
-  position: fixed;
-  bottom: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  border: none;
-  outline: none;
-  background: linear-gradient(90deg,
-      rgb(113, 152, 234) 0%,
-      rgb(113, 152, 234) 100%);
-  color: rgb(30, 30, 30);
-  text-transform: uppercase;
-  border-radius: 10px, 10px, 10px, 10px;
-  overflow: hidden;
-  display: flex;
-  padding: 20px;
-  font-size: 20px;
-  justify-content: center;
-
 }
 
 .message-input {
@@ -150,6 +152,11 @@
   color: rgb(255, 255, 255);
 }
 
+.message-submit:hover {
+  opacity: 50%;
+  cursor: pointer;
+}
+
 h1,
 h2 {
   font-size: 30px;
@@ -161,4 +168,72 @@ h2 {
   /* color: rgba(255, 255, 255, .8);*/
   font-size: 12px;
   letter-spacing: 6px;
+}
+
+@keyframes bounce {
+  0% {
+    transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  4.7% {
+    transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  9.41% {
+    transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  14.11% {
+    transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  18.72% {
+    transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  24.32% {
+    transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  29.93% {
+    transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  35.54% {
+    transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  41.04% {
+    transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  52.15% {
+    transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  63.26% {
+    transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  85.49% {
+    transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+
+  100% {
+    transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+}
+
+.message-body.new {
+  transform: scale(0);
+  transform-origin: 0 0;
+  -webkit-animation: bounce 500ms linear both;
+  animation: bounce 500ms linear both;
+}
+
+.my-message-body.new {
+  transform: scale(0);
+  transform-origin: 0 0;
+  -webkit-animation: bounce 500ms linear both;
+  animation: bounce 500ms linear both;
 }
