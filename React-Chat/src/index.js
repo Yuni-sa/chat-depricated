@@ -1,11 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './index.css';
-import reportWebVitals from './tests probably/reportWebVitals';
-import Profile from './Profile';
-import App from './App';
-import Layout from './Layout';
+import "./index.css";
+import reportWebVitals from "./tests probably/reportWebVitals";
+import Profile from "./Profile";
+import App from "./App";
+import Layout from "./Layout";
 
 export default function Main() {
   return (
@@ -14,14 +14,13 @@ export default function Main() {
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
           <Route path="Profile" element={<Profile />} />
-
         </Route>
       </Routes>
     </BrowserRouter>
   );
 }
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>

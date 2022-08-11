@@ -9,11 +9,10 @@ export const sendMessage = (input) => {
       id: id,
       username: username,
       text: input,
-    }));
+    })
+  );
   //alert("sent!: "+input)
-}
-const client = ({ }) => {
-
-}
+};
+const client = ({}) => {};
 
 export default client;
