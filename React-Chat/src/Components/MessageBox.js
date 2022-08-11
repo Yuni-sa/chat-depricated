@@ -29,8 +29,8 @@ function MessageBox() {
 
   return (
     <form className="message-box" onSubmit={handleSubmit}>
-      <input type="text" disabled={username == ""} dir="auto" className="message-input" value={input} /*placeholder={''}*/ onChange={handleChange}></input>
-      <button type="submit" disabled={username == ""} className="message-submit"><SendRoundedIcon sx={{ fontSize: 40 }}></SendRoundedIcon></button>
+      <input type="text" disabled={username == "" || username == null} dir="auto" className="message-input" value={input} /*placeholder={''}*/ onChange={handleChange}></input>
+      <button type="submit" disabled={username == "" || username == null} className="message-submit"><SendRoundedIcon sx={{ fontSize: 40 }}></SendRoundedIcon></button>
     </form>
   )
 }
