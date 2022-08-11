@@ -14,6 +14,7 @@ import (
 // the chat message structre
 type ChatMessage struct {
 	Room     string `json:"room"`
+	Id       string `json:"id"`
 	Username string `json:"username"`
 	Text     string `json:"text"`
 	Time     string `json:"time"`

@@ -8,7 +8,9 @@ import $ from 'jquery';
 import Navbar from './Components/Navbar';
 
 //temporary,intended for testing
-export const username = prompt("what's your name?")
+export var username = prompt("what's your name?")
+export var id = prompt("what's your id?")
+console.log(username)
 
 //global array of the messages
 export var global_msgs = []
@@ -32,19 +34,18 @@ const App = ({ }) => {
       time = new Date(time)
       time = time.getHours() + ":" + time.getMinutes();
       var user = data.username;
-
+      console.log(msg);
       if ($.trim(msg) == '') {
         console.log("oof");
         return false;
       }
 
-      setMessages(/*current => [
+      setMessages(current => [
         ...current,
         { msg: msg, time: time, user: user },
-      ]*/)
+      ])
 
       global_msgs.push({ msg: msg, time: time, user: user })
-
     }
   });
 
