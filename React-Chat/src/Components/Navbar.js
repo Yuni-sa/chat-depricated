@@ -22,6 +22,12 @@ function Navbar() {
         <nav className={sidebar ? "nav-menu-active" : "nav-menu"}>
           <ul className="nav-menu-items">
             <li>
+              <Link to="../Login">Login</Link>
+            </li>
+            <li>
+              <Link to="../Register">Register</Link>
+            </li>
+            <li>
               <Link to="./">Chat</Link>
             </li>
             <li>

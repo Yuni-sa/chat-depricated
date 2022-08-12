@@ -6,6 +6,9 @@ import reportWebVitals from "./tests probably/reportWebVitals";
 import Profile from "./Profile";
 import App from "./App";
 import Layout from "./Layout";
+import Login from "./Login";
+import Llogin from "./Login";
+import Register from "./Register";
 
 export default function Main() {
   return (
@@ -13,6 +16,8 @@ export default function Main() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<App />} />
+          <Route path="Login" element={<Login />} />
+          <Route path="Register" element={<Register />} />
           <Route path="Profile" element={<Profile />} />
         </Route>
       </Routes>

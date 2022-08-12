@@ -7,54 +7,30 @@ import { ws, sendMessage } from "./client.js";
 import $ from "jquery";
 import Navbar from "./Components/Navbar";
 
-//temporary,intended for testing
+// temporary,intended for testing
 export var username = "";
-export const id = prompt("what's your id?");
-export const password = prompt("what's your password?");
-
-// register func
-/*fetch('http://localhost:4000/api/register', {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    id,
-    username,
-    password
-  })
-})*/
-
-console.log(username);
+export var id = "";
+export var password = "";
 
 //global array of the messages
 export var global_msgs = [];
 
 const App = ({}) => {
-
-  // login func - gets the cookie
-  fetch("http://localhost:4000/api/login", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    credentials: "include",
-    body: JSON.stringify({
-      id,
-      password,
-    }),
-  });
-
+  // var [username, setUsername] = useState("");
   // get user func
-  // useEffect(() => {
-     (
-       async () => {
-         const response = await fetch('http://localhost:4000/api/user', {
-           headers: { 'Content-Type': 'application/json' },
-           credentials: 'include',
-         })
-         const info = await response.json()
-         username = info.username
-         console.log(username)
-       }
-     )();
-  // });
+  //useEffect(() => {
+  (async () => {
+    const response = await fetch("http://localhost:4000/api/user", {
+      headers: { "Content-Type": "application/json" },
+      credentials: "include",
+    });
+    const info = await response.json();
+    // setUsername(info.username)
+    username = info.username;
+    id = info.id;
+    console.log(username);
+  })();
+  //});
 
   // messages array and setMessages function,
   //used only for updating the messages (awkward solution for now)
@@ -73,7 +49,7 @@ const App = ({}) => {
       var user = data.username;
       // console.log(msg);
       if ($.trim(msg) == "") {
-        console.log("oof");
+        // console.log("empty message");
         return false;
       }
 

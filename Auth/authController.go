@@ -25,7 +25,9 @@ func register(c *fiber.Ctx) error {
 		Password: string(password),
 	}
 	sendToRedis(user)
-	return c.JSON(user)
+	return c.JSON((fiber.Map{
+		"message": "success",
+	}))
 
 }
 
