@@ -24,7 +24,7 @@ function MessageBox() {
     setInput("");
   };
 
-  if (username != "" || username != null) {
+  if (username != "" && username != null) {
     disabled = false;
   }
 
