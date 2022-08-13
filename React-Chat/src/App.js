@@ -15,7 +15,7 @@ export var password = "";
 //global array of the messages
 export var global_msgs = [];
 
-const App = ({}) => {
+const App = () => {
   // var [username, setUsername] = useState("");
   // get user func
   //useEffect(() => {
@@ -27,7 +27,7 @@ const App = ({}) => {
     const info = await response.json();
     // setUsername(info.username)
     username = info.username;
-    id = info.id;
+    id = info.id_number;
     console.log(username);
   })();
   //});

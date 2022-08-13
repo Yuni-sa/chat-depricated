@@ -67,8 +67,8 @@ function Register() {
   );
 
   return (
-    <div className="Login">
-      <div className="login-form">
+    <div className="Register">
+      <div className="Register-Form">
         <div className="title">Register</div>
         {isSubmitted ? <Navigate to="/login" /> : renderForm}
       </div>
