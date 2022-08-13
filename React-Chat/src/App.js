@@ -11,26 +11,28 @@ import Navbar from "./Components/Navbar";
 export var username = "";
 export var id = "";
 export var password = "";
+export var loggedIn = false;
 
 //global array of the messages
 export var global_msgs = [];
 
 const App = () => {
-  // var [username, setUsername] = useState("");
+  const [changed, setChanged] = useState(false);
   // get user func
-  //useEffect(() => {
-  (async () => {
-    const response = await fetch("http://localhost:4000/api/user", {
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-    });
-    const info = await response.json();
-    // setUsername(info.username)
-    username = info.username;
-    id = info.id_number;
-    console.log(username);
-  })();
-  //});
+  useEffect(() => {
+    (async () => {
+      const response = await fetch("http://localhost:4000/api/user", {
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+      });
+      const info = await response.json();
+      // setUsername(info.username)
+      setChanged(true)
+      username = info.username;
+      id = info.id_number;
+      console.log(username);
+    })();
+  });
 
   // messages array and setMessages function,
   //used only for updating the messages (awkward solution for now)

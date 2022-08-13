@@ -1,4 +1,4 @@
-import { loggedIn } from "../App";
+// import { loggedIn } from "../App";
 
 function Logout() {
   (async () => {
@@ -8,7 +8,7 @@ function Logout() {
       credentials: "include",
     });
     const info = await response.json();
-    loggedIn = false;
+    // loggedIn = false;
     console.log(info);
     return info;
   })();
