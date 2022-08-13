@@ -9,7 +9,7 @@ import { username } from "../App";
 function MessageBox() {
   // adding React state variable to the function component MessageBox,
   //so the value of the variable will be preserved
-
+  var disabled = true;
   var [input, setInput] = useState("");
 
   // handling change of input
@@ -24,21 +24,21 @@ function MessageBox() {
     setInput("");
   };
 
+  if (username != "" || username != null) {
+    disabled = false;
+  }
+
   return (
     <form className="message-box" onSubmit={handleSubmit}>
       <input
         type="text"
-        disabled={username == "" || username == null}
+        disabled={disabled}
         dir="auto"
         className="message-input"
         value={input}
         /*placeholder={''}*/ onChange={handleChange}
       ></input>
-      <button
-        type="submit"
-        disabled={username == "" || username == null}
-        className="message-submit"
-      >
+      <button type="submit" disabled={disabled} className="message-submit">
         <SendRoundedIcon sx={{ fontSize: 40 }}></SendRoundedIcon>
       </button>
     </form>
